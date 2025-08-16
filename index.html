@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mein Portfolio - Tatiana Kaufmann</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Musik -->
+  <audio id="bg-music" autoplay loop>
+    <source src="musik.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Mein Portfolio - Tatiana Kaufmann</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">Über mich</a>
+      <a href="#gallery">Galerie</a>
+      <a href="#contact">Kontakt</a>
+    </nav>
+  </header>
+
+  <!-- Home -->
+  <section id="home">
+    <video autoplay muted loop playsinline>
+      <source src="video.mp4" type="video/mp4">
+    </video>
+    <h1>Willkommen auf meiner Website</h1>
+    <div class="home-photos">
+      <img src="Fotos/material1.jpg" alt="Bild 1">
+      <img src="Fotos/technica1.jpg" alt="Bild 1">
+      <img src="Fotos/technica2.jpg" alt="Bild 1">
+      <img src="Fotos/technica3.jpg" alt="Bild 1">
+      <img src="Fotos/material2.jpeg" alt="Bild 1">
+    <div>
+
+  </section>
+
+  <!-- Über mich -->
+  <section id="about">
+    <h2>Über mich</h2>
+    <div class="about-container">
+      <div class="about-photos">
+        <img src="Fotos/tatiana1.jpg" alt="Tatiana Kaufmann">
+        <img src="Fotos/tatiana2.jpg" alt="Tatiana beim Malen">
+      </div>
+      <div class="about-text">
+        <p>Ich bin Tatiana Kaufmann, eine Brasilianerin, die seit 2002 in der Schweiz, Zollikofen lebt. Ich bin Mutter von zwei Kindern und arbeite in einem Krankenhaus in Bern als Fachfrau für Gesundheit. Hier trage ich dazu bei, das Wohlbefinden der Patienten zu fördern.</p>
+        <p>In meiner Freizeit widme ich mich leidenschaftlich der Kunst und dem Sport – beides sind für mich essenzielle Bestandteile meines Lebens.</p>
+        <p>Die Malerei ist meine große Leidenschaft, die mir viel Freude und Inspiration schenkt. Für mich sind Kunst und Bewegung eine perfekte Kombination, um Balance und Glück im Alltag zu finden.</p>
+        <p>Leidenschaftlich für Farben und Formen, möchte meine Kunst Emotionen vermitteln, Geschichten erzählen und Räume durch lebendige und ausdrucksstarke Werke verwandeln. Mit einer verfeinerten Acryltechnik erkunde ich eine Vielzahl von Stilen, sei es abstrakt oder nicht, stets bestrebt, zu innovieren und meine einzigartige Sicht auf das Leben auszudrücken.</p>
+        <p>Im Laufe meiner künstlerischen Entwicklung spiegelt meine Kreativität meine Hingabe und Leidenschaft für die Malerei wider. Mein Ziel ist es, Werke zu schaffen, die inspirieren, berühren und begeistern – sei es in Wohnräumen, gewerblichen Umgebungen oder bei Ausstellungen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section id="gallery">
+    <h2>Galerie</h2>
+    <p>Meine Kunstwerke</p>
+    <div class="gallery">
+      <div class="gallery-item">
+        <a href="#img1"><img src="Fotos/Galeria/IMG_6580.jpg" alt="Iluminação - Erleuchtung"></a>
+        <div class="caption">„Iluminação“ (Erleuchtung)</div>
+      </div>
+      <div class="gallery-item">
+        <a href="#img2"><img src="Fotos/Galeria/IMG_6582.jpg" alt="Sereno - Unbeschwert"></a>
+        <div class="caption">„Sereno“ (Unbeschwert)</div>
+      </div>
+      <div class="gallery-item">
+        <a href="#img3"><img src="Fotos/Galeria/IMG_6583.jpg" alt="Auf Rosa Wolken"></a>
+        <div class="caption">„Auf Rosa Wolken“</div>
+      </div>
+      <div class="gallery-item">
+        <a href="#img4"><img src="Fotos/Galeria/IMG_6589.jpg" alt="Bild 4"></a>
+        <div class="caption">Bild 4</div>
+      </div>
+      <div class="gallery-item">
+        <a href="#img5"><img src="Fotos/Galeria/IMG_6595.jpg" alt="Bild 5"></a>
+        <div class="caption">Bild 5</div>
+      </div>
+      <div class="gallery-item">
+        <a href="#img7"><img src="Fotos/Galeria/IMG_6603.jpg" alt="Bild 7"></a>
+        <div class="caption">Bild 7</div>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="img1"><a href="#gallery"><img src="Fotos/Galeria/IMG_6580.jpg" alt="Iluminação"></a></div>
+    <div class="lightbox" id="img2"><a href="#gallery"><img src="Fotos/Galeria/IMG_6582.jpg" alt="Sereno"></a></div>
+    <div class="lightbox" id="img3"><a href="#gallery"><img src="Fotos/Galeria/IMG_6583.jpg" alt="Auf Rosa Wolken"></a></div>
+    <div class="lightbox" id="img4"><a href="#gallery"><img src="Fotos/Galeria/IMG_6589.jpg" alt="Bild 4"></a></div>
+    <div class="lightbox" id="img5"><a href="#gallery"><img src="Fotos/Galeria/IMG_6595.jpg" alt="Bild 5"></a></div>
+    <div class="lightbox" id="img7"><a href="#gallery"><img src="Fotos/Galeria/IMG_6603.jpg" alt="Bild 7"></a></div>
+  </section>
+
+  <!-- Kontakt -->
+  <section id="contact">
+    <h2>Kontakt</h2>
+    <form id="contactForm">
+      <label>Name:</label>
+      <input type="text" name="name" required>
+
+      <label>E-Mail:</label>
+      <input type="email" name="email" required>
+
+      <label>Nachricht:</label>
+      <textarea name="message" rows="5" required></textarea>
+
+      <!-- Honeypot -->
+      <input type="text" name="website" class="hidden">
+
+      <!-- reCAPTCHA -->
+      <div class="g-recaptcha" data-sitekey="DEIN_SITE_KEY"></div>
+
+      <button type="submit">Senden</button>
+    </form>
+
+    <div id="response"></div>
+  </section>
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="script.js"></script>
+</body>
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2025 Tatiana Kaufmann | Alle Rechte vorbehalten</p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/deinprofil" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com/deinprofil" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- Font Awesome CDN für Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</html>
