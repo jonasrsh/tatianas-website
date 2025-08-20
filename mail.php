@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit("Ungültige E-Mail-Adresse.");
     }
 
-    $to = "DEINE_EMAIL@domain.ch";
+    $to = "mail@tatianakaufmann.art";
     $subject = "Neue Nachricht von $name";
     $body = "Name: $name\nE-Mail: $email\n\nNachricht:\n$message";
 
