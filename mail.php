@@ -6,19 +6,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Eingaben filtern
-    $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
-    $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
-    $message = htmlspecialchars($_POST['message']);
+    $name = filter_var($_POST['name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS) : '';
+    $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) : '';
+    $message = htmlspecialchars($_POST['message']) : '';
+
+    if (empty($name) || empty($email) || empty($message)) {
+        exit("Bitte fülle alle Felder korrekt aus.");
+    }
 
     // reCAPTCHA prüfen
     $recaptcha_secret = "6LdwwKsrAAAAAMgewG7WKqWnr3GRc8x8HOFbsgrP";
     $recaptcha_response = $_POST['g-recaptcha-response'] ?? '';
-    $response = file_get_contents(
-        "https://www.google.com/recaptcha/api/siteverify?secret=$recaptcha_secret&response=$recaptcha_response"
-    );
-    $responseKeys = json_decode($response, true);
+    $recaptcha_url = "https://www.google.com/recaptcha/api/siteverify";
+
+    $data = [
+        'secret' => $recaptcha_secret,
+        'response' => $recaptcha_response
+    ];
+
+    $options = [
+        'http' => [
+            'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+            'method'  => 'POST',
+            'content' => http_build_query($data),
+        ],
+    ];
+    $context  = stream_context_create($options);
+    $result = file_get_contents($recaptcha_url, false, $context);
+    if ($result === FALSE) {
+        exit("Fehler bei der reCAPTCHA-Anfrage.");
+    }
+
+    $responseKeys = json_decode($result, true);
     if (empty($responseKeys["success"]) || !$responseKeys["success"]) {
-        die("reCAPTCHA-Überprüfung fehlgeschlagen.");
+        exit("reCAPTCHA-Überprüfung fehlgeschlagen.");
     }
 
     // Mail senden
