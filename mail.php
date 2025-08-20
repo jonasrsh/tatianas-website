@@ -6,10 +6,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Eingaben filtern
-    $name = filter_var($_POST['name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS) : '';
-    $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) : '';
-    $message = htmlspecialchars($_POST['message']) : '';
-
+    $name = filter_var($_POST['name'] ?? '', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $email = filter_var($_POST['email'] ?? '', FILTER_VALIDATE_EMAIL);
+    $message = htmlspecialchars($_POST['message'] ?? '');
+    
     if (empty($name) || empty($email) || empty($message)) {
         exit("Bitte fülle alle Felder korrekt aus.");
     }
